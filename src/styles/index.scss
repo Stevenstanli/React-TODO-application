@@ -11,3 +11,22 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+body{
+    background-color: black
+}
+.todo {
+    width: 500px;
+    height: 500px;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center
+}
+input {
+    text-align: center;
+    border: 0;
+    border-bottom: 1px solid black;
+    outline: none;
+    padding: 20px;
+    margin: 25px
+}
