@@ -8,11 +8,11 @@ export function Home() {
 
 	let pendingTodo = arrayTodos.length;
 
-	const delet = uniqueId => {
-		let itemDelet = arrayTodos.filter(item => {
+	const deleteTodo = uniqueId => {
+		let itemDelete = arrayTodos.filter(item => {
 			return item.id !== uniqueId;
 		});
-		setArrayTodos(itemDelet);
+		setArrayTodos(itemDelete);
 	};
 
 	const addTodo = e => {
@@ -28,9 +28,9 @@ export function Home() {
 	};
 
 	return (
-		<div className="container bg-light">
+		<div className="container">
 			<div className="row vh-100 align-items-center">
-				<div className="todo bg-white">
+				<div className="todo card">
 					<header className="header">
 						<h1>todos</h1>
 						<form onSubmit={addTodo}>
@@ -41,7 +41,7 @@ export function Home() {
 							/>
 						</form>
 					</header>
-					<section>
+					<section className="color">
 						{pendingTodo === 0 ? (
 							<p>There are no pending to do list</p>
 						) : (
@@ -51,7 +51,7 @@ export function Home() {
 										{item.nameTodo}{" "}
 										<i
 											onClick={() => {
-												delet(item.id);
+												deleteTodo(item.id);
 											}}
 											className="fas fa-trash"></i>
 									</p>
